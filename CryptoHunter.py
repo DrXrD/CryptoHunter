@@ -209,9 +209,15 @@ while True:
         sp = s * 16
         spc_eth = sp + s * (43 - len(eth_addr))
         spc_doge = sp + s * (43 - len(doge_addr))
+        with open("result.txt", "a") as file:
+            file.write(f"[{z} | Found:{ff}]  ETH: {eth_addr}{spc_eth}[Balance: {eth_balance}]\n")
+            file.write(f"[{z} | Found:{ff}]  BNB: {eth_addr}{spc_eth}[Balance: {bnb_balance}]\n")
+            file.write(f"[{z} | Found:{ff}] DOGE: {doge_addr}{spc_doge}[Balance: {doge_balance}]\n")
+            file.write(f"[{z} | Found:{ff}]  Mne: {mnemonic}\n")
+            file.write(f"[{z} | Found:{ff}]  Hex: {convert_hex}\n")
         # // Print Output Logs with Pretty Type Format
         print(f"[{z} | Found:{ff}]  ETH: {cyan}{eth_addr}{reset}{spc_eth}[Balance: {cyan}{eth_balance}{reset}]")
         print(f"[{z} | Found:{ff}]  BNB: {green}{eth_addr}{reset}{spc_eth}[Balance: {green}{bnb_balance}{reset}]")
         print(f"[{z} | Found:{ff}] DOGE: {yellow}{doge_addr}{reset}{spc_doge}[Balance: {yellow}{doge_balance}{reset}]")
-        print(f"[{z} | Found:{ff}]  Mne: {red}{mnemonic[0:64]}{reset}")
+        print(f"[{z} | Found:{ff}]  Mne: {red}{mnemonic}{reset}")
         print(f"[{z} | Found:{ff}]  Hex: {convert_hex}")
