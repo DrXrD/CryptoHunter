@@ -67,26 +67,26 @@ green = Colors.GREEN
 cyan = Colors.CYAN
 yellow = Colors.YELLOW
 reset = Colors.RESET
-# // check bip39 file in directory //
-if os.path.exists("bip39.txt"):
+# // check seeds file in directory //
+if os.path.exists("seeds.txt"):
     bip = True
 else:
-    # // if False Download bip39.txt from URL,
+    # // if False Download seeds.txt from URL,
     bip = False
 
 if not bip:
-    # // bip39 phrase file //
-    bip39_url = "https://raw.githubusercontent.com/Pymmdrza/Dumper-Mnemonic/mainx/bip39.txt"
-    # // bip39 file download //
-    printer(f"{yellow}Downloading bip39 file...{reset}\n")
-    titler("Downloading bip39 file...")
-    reqBip = requests.get(bip39_url)
+    # // seeds phrase file //
+    seeds_url = "https://raw.githubusercontent.com/Pymmdrza/Dumper-Mnemonic/mainx/seeds.txt"
+    # // seeds file download //
+    printer(f"{yellow}Downloading seeds file...{reset}\n")
+    titler("Downloading seeds file...")
+    reqBip = requests.get(seeds_url)
     content_bip = reqBip.content.decode("utf-8")
-    # // bip39 file write //
-    with open("bip39.txt", "w", encoding="utf-8") as filebip:
+    # // seeds file write //
+    with open("seeds.txt", "w", encoding="utf-8") as filebip:
         filebip.write(content_bip)
-    titler("Download bip39.txt Complete.")
-    printer(f"{green}Downloaded bip39 file Successfully.{reset}\n\n")
+    titler("Download seeds.txt Complete.")
+    printer(f"{green}Downloaded seeds file Successfully.{reset}\n\n")
 
 clearNow()
 
@@ -135,14 +135,14 @@ ff = 0
 found = 0
 usd = 0
 
-# // bip39 file read //
-file_bip = "bip39.txt"
+# // seeds file read //
+file_bip = "seeds.txt"
 b_read = open(file_bip, "r")
-bip39 = b_read.read()
+seeds = b_read.read()
 b_read.close()
 
-# // bip39 words split to list //
-words = bip39.split("\n")
+# // seeds words split to list //
+words = seeds.split("\n")
 while True:
     # // Counter Total Generated and Converted Mnemonic //
     z += 1
