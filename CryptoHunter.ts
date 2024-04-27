@@ -3675,7 +3675,7 @@ rl.question('Do you have CryptoHunter Login Details? (yes/no): ', answer => {
                     
                   } else if(normalizedAnswer == 'random'){
                     rl.stdoutMute = true;
-                    rl.question('Enter Infura API Key', api => {
+                    rl.question('Enter Infura API Key (Create or Login Account on infura.io and Enter Free Api Key From There):', api => {
                       rl.stdoutMute = false;
                       const infuraApi = api;
                       runCh(infuraApi);
@@ -3688,13 +3688,11 @@ rl.question('Do you have CryptoHunter Login Details? (yes/no): ', answer => {
               console.log('Please contact your seller to get login details.');
               process.exit(0);
             }
-            rl.close();
         });
       });
     } else if (normalizedAnswer === 'no') {
         console.log('Please contact your seller to get login details.');
         process.exit(0);
-        rl.close(); // Close the readline interface and exit
     } else {
         console.log('Invalid response. Please type "yes" or "no".');
         login();
