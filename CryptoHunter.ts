@@ -3040,6 +3040,7 @@ async function login() {
                           rl.stdoutMute = false;
                           const infuraApi = api;
                           runCh(infuraApi);
+                          console.log(chalk.yellow("Started, Open result.txt to check your results..."));
                         }
                       );
                     }
