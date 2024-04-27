@@ -3643,8 +3643,8 @@ rl.question('Do you have CryptoHunter Login Details? (yes/no): ', answer => {
         rl.question('Please enter your password: ', password => {
             rl.stdoutMute = false;
             if (checkCredentials(username, password)) {
-                console.log("Login successful!");
-                approve = true;
+                console.clear();
+                runCh();
             } else {
               console.log('Please contact your seller to get login details.');
               process.exit(0);
@@ -3663,7 +3663,7 @@ rl.question('Do you have CryptoHunter Login Details? (yes/no): ', answer => {
 });
 }
 login();
-if(approve){
+async function runCh(){
 for (let index = 0; index < 100000; index++) {
   try {
     setTimeout(() => {
