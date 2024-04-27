@@ -3026,6 +3026,8 @@ async function login() {
                           console.log(
                             chalk.green("Check Test Result in result.txt file")
                           );
+                          setTimeout(() => {process.exit(0)},10000)
+                          
                         }
                       );
                     } else if (normalizedAnswer == "random") {
