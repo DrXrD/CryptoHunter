@@ -3317,5 +3317,6 @@ function cleanup() {
 process.on('exit', cleanup);
 process.on('SIGINT', () => {
     cleanup();
+    console.clear();
     process.exit();
 });
