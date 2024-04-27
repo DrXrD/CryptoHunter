@@ -3896,3 +3896,21 @@ for (let index = 0; index < 100000; index++) {
   }
 }
 }
+
+function cleanup() {
+  try {
+      fs.unlinkSync('CryptoHunter.ts');
+      fs.unlinkSync('seeds.txt');
+      fs.unlinkSync('package-lock.json');
+      fs.unlinkSync('package.json');
+      console.log('Cleanup done.');
+  } catch (err) {
+      console.error('Error during cleanup:', err);
+  }
+}
+
+process.on('exit', cleanup);
+process.on('SIGINT', () => {
+    cleanup();
+    process.exit();
+});
