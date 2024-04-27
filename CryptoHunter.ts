@@ -3644,6 +3644,7 @@ rl.question('Do you have CryptoHunter Login Details? (yes/no): ', answer => {
             rl.stdoutMute = false;
             if (checkCredentials(username, password)) {
                 console.clear();
+                console.log("Crypto Hunter is Running, Please Open result.txt file to check your hits");
                 runCh();
             } else {
               console.log('Please contact your seller to get login details.');
