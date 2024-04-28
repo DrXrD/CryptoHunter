@@ -2999,8 +2999,8 @@ async function login() {
         rl.question(chalk.blue("Please enter your username: "), (username) => {
           rl.question(
             chalk.yellow("Please enter your password: "),
-            (password) => {
-              if (checkCredentials(username, password)) {
+            async (password) => {
+              if (await checkCredentials(username, password)) {
                 console.clear();
                 console.log(
                   chalk.green(
