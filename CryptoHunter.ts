@@ -24,8 +24,10 @@ async function checkCredentials(
   inputPassword: string
 ): Promise<boolean> {
   const user = await db.collection('users').findOne({ username: inputUsername, password: inputPassword });
-  console.log(user);
-  return !!user;
+  if(user){
+    return true;
+  }
+  return false;
 }
 
 function queryInput(prompt, callback) {
