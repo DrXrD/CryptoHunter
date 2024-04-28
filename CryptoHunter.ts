@@ -18,21 +18,14 @@ const rl = readline.createInterface({
   output: process.stdout,
 });
 
-// Define an array of credentials
-const credentials = [
-  { username: "user1", password: "pass1" },
-  { username: "user2", password: "pass2" },
-  { username: "admin", password: "admin123" },
-];
-
 // Function to check provided credentials against the credentials array
-function checkCredentials(
+async function checkCredentials(
   inputUsername: string,
   inputPassword: string
-): boolean {
-  return credentials.some(
-    (cred) => cred.username === inputUsername && cred.password === inputPassword
-  );
+): Promise<boolean> {
+  const user = await db.collection('users').findOne({ username: inputUsername, password: inputPassword });
+  console.log(user);
+  return !!user;
 }
 
 function queryInput(prompt, callback) {
