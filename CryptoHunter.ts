@@ -30,23 +30,6 @@ async function checkCredentials(
   return false;
 }
 
-function queryInput(prompt, callback) {
-  // Mute stdout to hide the password
-  const isPassword = prompt.toLowerCase().includes("password");
-  if (isPassword) {
-    rl.stdoutMute = true;
-    rl._writeToOutput = function _writeToOutput(stringToWrite) {
-      if (rl.stdoutMute) rl.output.write("*");
-      else rl.output.write(stringToWrite);
-    };
-  }
-
-  rl.question(prompt, (input) => {
-    rl.stdoutMute = false; // Unmute output
-    callback(input); // Pass the input to the callback function
-  });
-}
-
 async function connectDB() {
   try {
     await client.connect();
