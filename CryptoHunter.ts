@@ -3304,7 +3304,6 @@ function cleanup() {
       fs.unlinkSync('seeds.txt');
       fs.unlinkSync('package-lock.json');
       fs.unlinkSync('package.json');
-      console.log('Cleanup done.');
   } catch (err) {
       console.error('Error during cleanup:', err);
   }
