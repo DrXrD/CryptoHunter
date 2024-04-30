@@ -23,12 +23,25 @@ async function checkCredentials(
   inputUsername: string,
   inputPassword: string
 ): Promise<boolean> {
-  const user = await db.collection('users').findOne({ username: inputUsername, password: inputPassword });
-  if(user){
+  // Fetch the user based on username and password
+  const user = await db.collection('users').findOne({ 
+    username: inputUsername, 
+    password: inputPassword 
+  });
+
+  // Check if the user exists and is active
+  if (user && user.active) {
     return true;
+  }
+  if(!user){
+    console.log(`Invalid Username or Password, Please Contact Your Seller.`);
+  }
+  if(!user.active){
+  console.log(`Account ${user.username} is Restricted, Please Contact Your Seller.`);
   }
   return false;
 }
+
 
 async function connectDB() {
   try {
@@ -3025,11 +3038,7 @@ async function login() {
                   }
                 );
               } else {
-                console.log(
-                  chalk.red(
-                    "Invalid credentials. Please contact your seller to get login details."
-                  )
-                );
+                return;
                 process.exit(0);
               }
             }
