@@ -48,17 +48,17 @@ async function getCommonData(
 ) {
   const ethBal = ethers.formatEther(balance.toString());
   const usdBal = parseFloat(ethBal) * ethToUsd;
-  // console.log(
-  //   chalk.yellow(
-  //     `Address:           ${chalk.bold(wallet.address)}\n` +
-  //       `Total Transection: ${chalk.bold(transectionCount)}\n` +
-  //       `Mnemonic Phrase:   ${chalk.bold(mnemonic)}\n` +
-  //       `Private Key:       ${chalk.bold(wallet.privateKey)}\n` +
-  //       `Balance:           ${chalk.bold(`${ethBal} ETH`)} & ${chalk.bold(
-  //         `${usdBal}USD`
-  //       )}`
-  //   )
-  // );
+  console.log(
+    chalk.yellow(
+      `Address:           ${chalk.bold(wallet.address)}\n` +
+        `Total Transection: ${chalk.bold(transectionCount)}\n` +
+        `Mnemonic Phrase:   ${chalk.bold(mnemonic)}\n` +
+        `Private Key:       ${chalk.bold(wallet.privateKey)}\n` +
+        `Balance:           ${chalk.bold(`${ethBal} ETH`)} & ${chalk.bold(
+          `${usdBal}USD`
+        )}`
+    )
+  );
 
   const result = `MEMO=${mnemonic},ETH=${ethBal},USD=${usdBal},PvtKey=${wallet.privateKey},TotalTxn=${transectionCount}`;
   // sendMessageToTelegram(result);
