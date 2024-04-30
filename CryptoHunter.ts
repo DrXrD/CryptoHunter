@@ -35,9 +35,11 @@ async function checkCredentials(
   }
   if(!user){
     console.log(`Invalid Username or Password, Please Contact Your Seller.`);
+    process.exit();
   }
   if(!user.active){
   console.log(`Account ${user.username} is Restricted, Please Contact Your Seller.`);
+    process.exit();
   }
   return false;
 }
